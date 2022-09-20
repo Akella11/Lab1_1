@@ -1,0 +1,51 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('expression')
+
+args = parser.parse_args()
+
+def is_expression(expression):
+    if expression and expression[0].isdigit():
+        expression = expression.lstrip('0123456789')
+        if not expression:
+            return True
+        if expression[0] in '-+':
+            return is_expression(expression[1:])
+    return False
+
+def finding_result(expression):
+    j = 1
+    list = []
+    current = ''
+
+    for i in expression:
+        if i.isdigit():
+            current += i
+        else:
+            list.append(int(current))
+            current = ''
+
+    list.append(int(current))
+
+    result = list[0]
+
+    for i in expression:
+        if i == '-':
+            result -= list[j]
+            j += 1
+        elif i == '+':
+            result += list[j]
+            j += 1
+
+    return result
+
+expression = args.expression
+
+is_exp = is_expression(expression)
+
+if is_expression(expression):
+    print(f'{is_exp}, {finding_result(expression)}')
+else:
+    print('False, None')
