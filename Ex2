@@ -1,0 +1,28 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(dest='operation', type=str)
+parser.add_argument(dest='first_num', type=int)
+parser.add_argument(dest='second_num', type=int)
+
+args = parser.parse_args()
+
+operation = args.operation
+first_num = args.first_num
+second_num = args.second_num
+result = None
+
+if operation == 'add':
+    result = first_num + second_num
+
+elif operation == 'subtract':
+    result = first_num - second_num
+
+elif operation == 'multiply':
+    result = first_num * second_num
+
+elif operation == 'divide':
+    result = first_num / second_num
+
+print(result)
