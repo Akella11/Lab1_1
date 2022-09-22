@@ -14,7 +14,7 @@ def calculating(first_num, sign, second_num):
     elif sign == '*':
         return first_num * second_num
 
-    elif sign == '/' and second_num != 0:
+    else sign == '/' and second_num != 0:
         return first_num / second_num
 
 
