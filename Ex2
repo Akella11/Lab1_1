@@ -3,7 +3,7 @@ import argparse
 
 def calculating(operation, first_num, second_num):
     if operation not in ('add', 'subtract', 'multiply', 'divide'):
-        print("Error: Incorrect math operation")
+        print("Error: Incorrect math sign")
 
     elif operation == 'add':
         return first_num + second_num
@@ -14,7 +14,7 @@ def calculating(operation, first_num, second_num):
     elif operation == 'multiply':
         return first_num * second_num
 
-    else operation == 'divide' and second_num != 0:
+    elif operation == 'divide' and second_num != 0:
         return first_num / second_num
 
 
