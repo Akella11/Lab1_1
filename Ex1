@@ -1,28 +1,26 @@
 import argparse
 
-parser = argparse.ArgumentParser()
 
+def calculating(first_num, sign, second_num):
+    if sign not in ('+', '-', '*', '/'):
+        print("Error: Incorrect math sign")
+
+    elif sign == '+':
+        return first_num + second_num
+
+    elif sign == '-':
+        return first_num - second_num
+
+    elif sign == '*':
+        return first_num * second_num
+
+    elif sign == '/' and second_num != 0:
+        return first_num / second_num
+
+
+parser = argparse.ArgumentParser()
 parser.add_argument(dest='first_num', type=int)
 parser.add_argument(dest='sign', type=str)
 parser.add_argument(dest='second_num', type=int)
-
 args = parser.parse_args()
-
-first_num = args.first_num
-sign = args.sign
-second_num = args.second_numв
-result = None
-
-if sign == '+':
-    result = first_num + second_num
-
-elif sign == '-':
-    result = first_num - second_num
-
-elif sign == '*':
-    result = first_num * second_num
-
-elif sign == '/':
-    result = first_num / second_num
-
-print(result)
+print(calculating(args.first_num, args.sign, args.second_num))
