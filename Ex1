@@ -23,4 +23,5 @@ parser.add_argument(dest='first_num', type=int)
 parser.add_argument(dest='sign', type=str)
 parser.add_argument(dest='second_num', type=int)
 args = parser.parse_args()
+
 print(calculating(args.first_num, args.sign, args.second_num))
